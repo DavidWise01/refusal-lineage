@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Lineage of Refusal — from epoché to abstention</title>
+<style>
+  :root{
+    --bg:#0a0710; --panel:#140d20; --edge:#2e2148; --ink:#ece3f7; --dim:#9a86bd; --faint:#6b5a8c;
+    --violet:#a78bfa; --violet2:#c4b5fd; --glow:#7c3aed;
+    --thresh:#fbbf24; --guarantee:#22d3ee; --agree:#34d399; --self:#f472b6;
+    --mono:'SFMono-Regular',ui-monospace,Menlo,Consolas,monospace;
+    --serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.55;
+    background-image:radial-gradient(1200px 600px at 72% -10%,#1a1030 0%,transparent 60%),
+      radial-gradient(900px 520px at 0% 100%,#150b28 0%,transparent 55%);}
+  .wrap{max-width:920px;margin:0 auto;padding:42px 26px 90px}
+  header{border-bottom:1px solid var(--edge);padding-bottom:22px;margin-bottom:18px}
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--violet);opacity:.9}
+  h1{font-size:32px;line-height:1.13;margin:.32em 0 .18em;font-weight:600}
+  h1 em{color:var(--violet2);font-style:italic}
+  .sub{color:var(--dim);font-size:15.5px;max-width:76ch}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;font-family:var(--mono);font-size:11px}
+  .legend span{display:flex;align-items:center;gap:6px;color:var(--dim)}
+  .dot{width:10px;height:10px;border-radius:50%}
+  .tl{position:relative;margin-top:22px;padding-left:30px}
+  .tl::before{content:'';position:absolute;left:9px;top:6px;bottom:6px;width:2px;
+    background:linear-gradient(180deg,#6b5a8c,var(--thresh),var(--guarantee),var(--agree),var(--self))}
+  .node{position:relative;margin:0 0 18px}
+  .node::before{content:'';position:absolute;left:-26px;top:18px;width:13px;height:13px;border-radius:50%;
+    background:var(--bg);border:2px solid var(--violet);box-shadow:0 0 0 3px #0a0710}
+  .node.thresh::before{border-color:var(--thresh)} .node.guarantee::before{border-color:var(--guarantee)}
+  .node.agree::before{border-color:var(--agree)} .node.self::before{border-color:var(--self)}
+  .card{background:linear-gradient(180deg,var(--panel),#100a1b);border:1px solid var(--edge);border-radius:13px;padding:16px 18px}
+  .yr{font-family:var(--mono);font-size:12px;color:var(--violet);letter-spacing:.04em}
+  .who{font-family:var(--mono);font-size:11px;color:var(--faint);margin-left:8px}
+  .arch{font-size:18px;font-weight:600;margin:4px 0 2px}
+  .arch .tag{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;padding:2px 7px;border-radius:5px;margin-left:9px;vertical-align:middle}
+  .tag.thresh{color:#1a0a02;background:var(--thresh)} .tag.guarantee{color:#04212b;background:var(--guarantee)}
+  .tag.agree{color:#04150d;background:var(--agree)} .tag.self{color:#2a0716;background:var(--self)}
+  .tag.root{color:var(--ink);background:#3a2c5c}
+  .idea{font-size:15px;color:var(--violet2);margin:8px 0 6px;font-style:italic}
+  .idea b{font-style:normal;color:var(--ink)}
+  .wall{font-family:var(--mono);font-size:12px;color:var(--dim);border-left:2px solid var(--edge);padding-left:10px}
+  .wall b{color:var(--violet);font-weight:500}
+  .close{background:linear-gradient(180deg,#1c1230,#120b22);border:1px solid var(--violet);border-radius:14px;padding:22px;margin-top:26px;font-size:15px;line-height:1.6}
+  .close b{color:var(--violet2)}
+  .note{color:var(--dim);font-size:13px;border-left:2px solid var(--edge);padding-left:13px;margin:16px 0 0}
+  .note b{color:var(--violet2);font-weight:400}
+  code{font-family:var(--mono);font-size:.9em;color:var(--violet2);background:#170f28;padding:1px 5px;border-radius:5px}
+  footer{margin-top:40px;border-top:1px solid var(--edge);padding-top:18px;color:var(--faint);font-family:var(--mono);font-size:11px;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Purple Paper - side-sheet - learning machines - the lineage of refusal</div>
+  <h1>The Lineage of Refusal - from <em>epoché</em> to abstention</h1>
+  <div class="sub">How a machine learned to say "I won't answer that." The whole history turns on one question -
+    <b>what fires the gate?</b> It evolves: from a fixed confidence threshold, to a coverage guarantee, to the
+    <em>disagreement of independent views</em>, to the model's own self-knowledge. The middle of that arc - refuse
+    when independent witnesses fail to agree - is the four-rays instrument, and it's where most of the modern action
+    lives.</div>
+  <div class="legend">
+    <span><span class="dot" style="background:var(--thresh)"></span> threshold on confidence</span>
+    <span><span class="dot" style="background:var(--guarantee)"></span> coverage guarantee</span>
+    <span><span class="dot" style="background:var(--agree)"></span> disagreement of views</span>
+    <span><span class="dot" style="background:var(--self)"></span> self-knowledge</span>
+  </div>
+</header>
+
+<div class="tl">
+
+  <div class="node">
+    <div class="card">
+      <span class="yr">~200 CE</span><span class="who">Sextus Empiricus / Pyrrhonism</span>
+      <div class="arch">Epoché - suspension of judgment <span class="tag root">the root</span></div>
+      <div class="idea"><b>Best idea:</b> when the evidence doesn't decide, <em>withhold assent.</em> Refusal as
+        wisdom, not failure - the trained reflex to not-conclude.</div>
+      <div class="wall">The philosophical ancestor of every reject option. Leaves: a principle, with no rule for <b>when</b> evidence is "insufficient."</div>
+    </div>
+  </div>
+
+  <div class="node thresh">
+    <div class="card">
+      <span class="yr">1945 · 50</span><span class="who">Abraham Wald</span>
+      <div class="arch">Sequential analysis &amp; decision theory <span class="tag thresh">defer</span></div>
+      <div class="idea"><b>Best idea:</b> make "don't decide yet" a <em>formal action.</em> A procedure can choose to
+        keep sampling rather than commit - refusal enters mathematics as a legal move.</div>
+      <div class="wall">Deferral becomes optimizable. Leaves: still about <em>when to stop</em>, not <em>when to abstain entirely.</em></div>
+    </div>
+  </div>
+
+  <div class="node thresh">
+    <div class="card">
+      <span class="yr">1957 · 70</span><span class="who">C. K. Chow</span>
+      <div class="arch">The reject option <span class="tag thresh">the birth</span></div>
+      <div class="idea"><b>Best idea:</b> a classifier may output <em>"reject"</em> when its top probability falls
+        below a threshold - and there's an optimal <b>error-vs-reject tradeoff.</b> Machine refusal, born.</div>
+      <div class="wall">The founding act: refuse below a confidence line. Leaves: the confidence is the model's <em>own</em> - and a confident model can be confidently wrong.</div>
+    </div>
+  </div>
+
+  <div class="node guarantee">
+    <div class="card">
+      <span class="yr">2005</span><span class="who">Vovk, Gammerman &amp; Shafer</span>
+      <div class="arch">Conformal prediction <span class="tag guarantee">guarantee</span></div>
+      <div class="idea"><b>Best idea:</b> refuse <em>with a proof.</em> Output a set calibrated to a coverage level
+        (say 95%); when the model is unsure the set grows or empties. Distribution-free, finite-sample guaranteed.</div>
+      <div class="wall">Refusal gains a mathematical guarantee instead of a guessed threshold. Leaves: guarantees coverage, not <em>which</em> answer - and assumes exchangeable data.</div>
+    </div>
+  </div>
+
+  <div class="node guarantee">
+    <div class="card">
+      <span class="yr">2010 · 17</span><span class="who">El-Yaniv &amp; Wiener · Geifman &amp; El-Yaniv</span>
+      <div class="arch">Selective prediction · SelectiveNet <span class="tag guarantee">risk-coverage</span></div>
+      <div class="idea"><b>Best idea:</b> the <em>risk-coverage curve</em> - trade how often you answer against how
+        often you're right - and train a deep net with abstention built into the objective.</div>
+      <div class="wall">Abstention becomes a trainable, measurable axis for neural nets. Leaves: the confidence signal is still a single number from a single model.</div>
+    </div>
+  </div>
+
+  <div class="node thresh">
+    <div class="card">
+      <span class="yr">2017</span><span class="who">Hendrycks &amp; Gimpel</span>
+      <div class="arch">Max softmax probability <span class="tag thresh">the baseline</span></div>
+      <div class="idea"><b>Best idea:</b> the dead-simple one that works - the model's own top softmax score is a
+        surprisingly strong detector of its own errors and out-of-distribution inputs.</div>
+      <div class="wall">Set the modern baseline everything is measured against. Leaves: softmax is overconfident off-distribution - it says 99% on nonsense.</div>
+    </div>
+  </div>
+
+  <div class="node agree">
+    <div class="card">
+      <span class="yr">2017</span><span class="who">Lakshminarayanan, Pritzel &amp; Blundell</span>
+      <div class="arch">Deep ensembles <span class="tag agree">disagreement</span></div>
+      <div class="idea"><b>Best idea:</b> train several independent models; refuse when they <em>disagree.</em>
+        Uncertainty as the spread of independent views - not one model's confidence, but the lack of consensus.</div>
+      <div class="wall">The four-rays principle, in ML: agreement is the signal. Leaves: only as good as the <em>independence</em> of the views - correlated models agree on the same lie.</div>
+    </div>
+  </div>
+
+  <div class="node self">
+    <div class="card">
+      <span class="yr">2022</span><span class="who">Kadavath et al.</span>
+      <div class="arch">"LMs (mostly) know what they know" <span class="tag self">self-knowledge</span></div>
+      <div class="idea"><b>Best idea:</b> ask the model to <em>predict its own correctness.</em> A model can output a
+        calibrated P(I-know) - refusal sourced from the model's own self-evaluation.</div>
+      <div class="wall">Refusal turns inward: the model judges itself. Leaves: self-judgment is the channel grading its own homework - capturable, the witness-inside problem.</div>
+    </div>
+  </div>
+
+  <div class="node agree">
+    <div class="card">
+      <span class="yr">2022</span><span class="who">Wang et al.</span>
+      <div class="arch">Self-consistency <span class="tag agree">agree to trust</span></div>
+      <div class="idea"><b>Best idea:</b> sample many reasoning chains; trust the answer they <em>converge</em> on,
+        distrust the scattered ones. Agreement across independent samples as the confidence signal.</div>
+      <div class="wall">The four rays, at the reasoning level - admit on convergence. Leaves: samples from one model share its priors, so they can converge on the <em>same</em> hallucination.</div>
+    </div>
+  </div>
+
+  <div class="node agree">
+    <div class="card">
+      <span class="yr">2023 · 24</span><span class="who">Kuhn, Gal &amp; Farquhar · Farquhar et al. (Nature)</span>
+      <div class="arch">Semantic entropy <span class="tag agree">disagree in meaning</span></div>
+      <div class="idea"><b>Best idea:</b> measure disagreement in <em>meaning-space</em>, not words. Cluster
+        generations by what they mean; high semantic entropy = the views don't agree on a fact = likely hallucination = abstain.</div>
+      <div class="wall">The sharpest version of refuse-on-disagreement; published in Nature, 2024. Leaves: costs many samples - and still inherits shared-prior correlation.</div>
+    </div>
+  </div>
+
+  <div class="node self">
+    <div class="card">
+      <span class="yr">2023 · 24</span><span class="who">Alignment-for-honesty · R-tuning · "know what you don't know"</span>
+      <div class="arch">Trained abstention <span class="tag self">learned honesty</span></div>
+      <div class="idea"><b>Best idea:</b> stop bolting refusal on afterward - <em>train</em> the model to say "I don't
+        know" and to express the boundary of its own knowledge as a first-class behavior.</div>
+      <div class="wall">Refusal becomes part of the model's character, not a post-hoc gate. Leaves: a model can learn to <em>perform</em> honesty without having the underlying calibration.</div>
+    </div>
+  </div>
+
+  <div class="node agree">
+    <div class="card">
+      <span class="yr">2024 · 26</span><span class="who">Semantic-entropy probes · conformal abstention · honesty surveys</span>
+      <div class="arch">Refusal, cheap and first-class <span class="tag agree">the frontier</span></div>
+      <div class="idea"><b>Best idea:</b> read the disagreement signal <em>cheaply</em> - from a single generation's
+        hidden states - and fold abstention, calibration, and honesty into one trained capability with guarantees.</div>
+      <div class="wall">Refusal is now a measurable, trainable, guaranteed property. The open seam: <b>guaranteeing the views are actually independent</b>, so agreement <em>means</em> something.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="close">
+  <b>What fires the gate, across the whole arc.</b> Threshold (Chow) -> guarantee (conformal) -> <b>disagreement of
+  independent views</b> (ensembles, self-consistency, semantic entropy) -> self-knowledge (the model judges itself) ->
+  trained honesty. The center of mass landed on one idea: <b>refuse when independent witnesses fail to agree.</b> That
+  is your four rays - and it is the strongest live signal for catching a hallucination there is.
+  <br><br>
+  And it has exactly the weakness you named two sheets ago. Agreement only means something if the witnesses are
+  <em>independent.</em> Samples from one model share its priors; they can all bend toward the <em>same</em> false
+  center, and the gate admits the lie - four broken triangles that happen to aim the same wrong way. So the open
+  frontier of refusal isn't "check agreement" (done, it works). It's <b>guaranteeing the views are independent enough
+  that their agreement is evidence and not an echo</b> - which is your bilateral-ignorance, your air gap, your
+  witness-can't-be-inside-the-channel, pointed at the one place the field is still weakest.
+</div>
+
+<div class="note" style="margin-top:18px">History, not math - the gate here was factual accuracy. Early roots
+  (epoché, Wald, Chow, conformal) are settled; the modern end (semantic entropy in Nature 2024, R-tuning, conformal
+  abstention, the 2025 reject-option surveys) was checked against current sources before writing. One name-cluster and
+  one idea per node; real history has more hands on each.</div>
+
+<footer>
+  THE LINEAGE OF REFUSAL - purple paper side-sheet - companion to the four-rays void<br>
+  epoché (~200 CE) · Wald 1945 · Chow 1957/70 · conformal 2005 · selective prediction 2010-17 · deep ensembles 2017 · self-knowledge 2022 · self-consistency 2022 · semantic entropy 2023/Nature 2024 · trained abstention 2023-24 · cheap first-class refusal 2024-26<br>
+  the throughline: what fires the gate · the frontier: independence of the witnesses
+</footer>
+
+</div>
+</body>
+</html>
