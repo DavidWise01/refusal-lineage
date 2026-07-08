@@ -1,0 +1,9 @@
+ROOT0-DLW-CHAIN-v1
+index : 1090
+slug  : refusal-lineage
+seal  : 094d56a227e741a8d84f7a76d440f84fb0ce90e795c48643105c202313878529
+prev  : a9d57dc1f2c2c2c815175274512643183621f7122330e5e36c9111fc7d5f5482
+link  : a7cbe587a53c46a91cfbe5cd0a0bf9960d993a48e09e5d33a347e00965ba8371
+head  : 3447d3a0533aaf1e29a8bdc67a9774884fb3ae9dbc8a17064b7a008ca3c4ec90
+
+— the tether: link = sha256(index|slug|seal|prev). the chain head commits to the whole corpus.
